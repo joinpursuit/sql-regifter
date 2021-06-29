@@ -13,24 +13,29 @@ CREATE DATABASE regifter;
 -- id serial primary KEY
 -- gift - string
 -- giver - string
--- value - integer
+-- price - integer
 -- previously_regifted boolean
+CREATE TABLE gifts
+(id serial, gift TEXT, giver TEXT, price INT, previously_regifted BOOLEAN);
 
 
 -- 
 \echo See details of the table you created
 -- 
-
+\d gifts;
 
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
-
+ALTER TABLE gifts RENAME price TO value;
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
-
+INSERT INTO 
+gifts (gift, giver, value, previously_regifted)
+VALUES
+('peach candle', 'Santa', 9, true);
 
 --
 \echo Query for all the columns in your gifts table
