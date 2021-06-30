@@ -159,12 +159,22 @@ WHERE
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
 
+DELETE FROM
+    gifts
+WHERE
+    giver = 'Santa' RETURNING gift, value
+;
+
 
 --
 \echo Query for all the columns in your gifts table one more time
 --
 
-
+SELECT
+    *
+FROM
+    gifts
+;
 
 -- BONUSES
 
