@@ -28,7 +28,7 @@ CREATE TABLE gifts(id SERIAL, gift TEXT, giver TEXT, value INT, previously_regif
 \echo Alter the table so that the column value is changed to price
 -- 
 
-ALTER TABLE gifts RENAME value TO price
+ALTER TABLE gifts RENAME value TO price;
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
@@ -40,7 +40,7 @@ INSERT INTO gifts(gift, giver, price, previously_regifted) VALUES ('peach candle
 \echo Query for all the columns in your gifts table
 -- 
 
-SELECT * FROM gifts
+SELECT * FROM gifts;
 
 --
 \echo Uncomment below to insert 5 more gifts
@@ -66,13 +66,13 @@ VALUES
 ('half pint glass', 'Vixen', 8, TRUE), 
 ('unicorn', 'Nutcracker', 90, TRUE), 
 ('zeus lightning bolt', 'Blitzen', 7000, FALSE) 
-RETURNING *
+RETURNING *;
 
 --
 \echo Query for gifts with a price greater than or equal to 20
 --
 
-SELECT * FROM gifts WHERE price >= 20
+SELECT * FROM gifts WHERE price >= 20;
 
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
@@ -114,7 +114,7 @@ DELETE FROM gifts WHERE giver = 'Santa' RETURNING price, gift;
 \echo Query for all the columns in your gifts table one more time
 --
 
-SELECT * FROM gifts
+SELECT * FROM gifts;
 
 -- BONUSES
 
@@ -122,15 +122,19 @@ SELECT * FROM gifts
 \echo Count the total number of gifts that have the word candle in it
 -- 
 
+SELECT * FROM gifts WHERE gift LIKE '%candle%';
 
 --
-\echo Get the AVEREAGE value from all the gifts
+\echo Get the AVEREAGE price from all the gifts
 --
 
+SELECT AVG(price) FROM gifts;
 
 -- 
 \echo Limit to 3 gifts, offset by 2 and order by price descending
 --
+
+SELECT * FROM gifts ORDER BY price DESC LIMIT 3 OFFSET 2;
 
 --
 -- finish
