@@ -16,6 +16,15 @@ CREATE DATABASE regifter;
 -- value - integer
 -- previously_regifted boolean
 
+CREATE TABLE 
+gifts(
+    id SERIAL,
+    gift TEXT,
+    giver TEXT,
+    value integer,
+    previously_regifted boolean
+);
+
 
 -- 
 \echo See details of the table you created
