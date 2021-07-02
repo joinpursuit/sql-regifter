@@ -38,6 +38,7 @@ INSERT INTO gifts (gift,giver,price,previously_regifted) VALUES ('peach candle',
 \echo Query for all the columns in your gifts table
 -- 
 
+\d+ gifts
 
 --
 \echo Uncomment below to insert 5 more gifts
