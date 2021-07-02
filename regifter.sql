@@ -16,16 +16,17 @@ CREATE DATABASE regifter;
 -- value - integer
 -- previously_regifted boolean
 
-
+CREATE TABLE Gifts ( id SERIAL, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN)
 -- 
 \echo See details of the table you created
 -- 
 
-
+\d gifts
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
 
+ALTER TABLE gifts RENAME value TO price  
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
