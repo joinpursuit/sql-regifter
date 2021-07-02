@@ -1,7 +1,7 @@
 -- Getting started, do not update
 DROP DATABASE IF EXISTS regifter;
 CREATE DATABASE regifter;
-\c regifter
+\c regifter;
 -- End getting started code
 
 --
@@ -16,22 +16,23 @@ CREATE DATABASE regifter;
 -- value - integer
 -- previously_regifted boolean
 
-CREATE TABLE Gifts ( id SERIAL, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN)
+CREATE TABLE Gifts ( id SERIAL, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN);
 -- 
 \echo See details of the table you created
 -- 
 
-\d gifts
+\d gifts;
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
 
-ALTER TABLE gifts RENAME value TO price  
+ALTER TABLE gifts RENAME value TO price;  
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
--- 
+--'
 
+INSERT INTO gifts (gift,giver,price,previously_regifted) VALUES ('peach candle', 'Santa', 9, true);
 
 --
 \echo Query for all the columns in your gifts table
