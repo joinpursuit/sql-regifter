@@ -97,7 +97,7 @@ SELECT value FROM gifts WHERE id = 2;
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
-DELETE FROM gifts WHERE giver = 'Santa' RETURNING 'value', 'gift';
+DELETE FROM gifts WHERE giver = 'Santa' RETURNING value, gift;
 
 --
 \echo Query for all the columns in your gifts table one more time
@@ -110,17 +110,18 @@ SELECT * FROM gifts;
 --
  \echo Count the total number of gifts that have the word candle in it
 --
+SELECT COUNT(gift) FROM gifts WHERE gift LIKE '%candle%';
 
 
 --
 \echo Get the AVEREAGE value from all the gifts
 --
-
+SELECT AVG(value) FROM gifts;
 
 --
  \echo Limit to 3 gifts, offset by 2 and order by price descending
 --
-
+SELECT * FROM gifts ORDER BY value DESC LIMIT 3 OFFSET 2;
 --
 -- finish
 --
