@@ -4,7 +4,7 @@ CREATE DATABASE regifter;
 \c regifter
 -- End getting started code
 
---
+
 -- Write your code below each prompt
 
 --
