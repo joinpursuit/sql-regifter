@@ -17,14 +17,14 @@ CREATE DATABASE regifter;
 -- previously_regifted boolean
 
 CREATE TABLE
-Gifts
-(id serial, gift TEXT, giver TEXT, value INT, previously_regifted boolean);
+    Gifts
+        (id serial, gift TEXT, giver TEXT, value INT, previously_regifted boolean);
 
 
 -- 
 \echo See details of the table you created
 -- 
-SELECT * FROM gifts;
+\d gifts;
 
 -- 
 \echo Alter the table so that the column price is changed to value 
@@ -34,12 +34,15 @@ ALTER TABLE price RENAME value;
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
-
+INSERT INTO gifts
+    (gift, giver, value, previously_regifted)
+VALUES
+    ('peach candle', 'Santa', '9', true);
 
 --
 \echo Query for all the columns in your gifts table
 -- 
-
+SELECT * FROM gifts;
 
 --
 \echo Uncomment below to insert 5 more gifts
@@ -58,7 +61,16 @@ ALTER TABLE price RENAME value;
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
 
-
+INSERT INTO
+    gifts
+        (gift, giver, value, previously_regifted)
+VALUES
+    ('vanilla candle', 'Jack Frost', '12', FALSE),
+    ('socks', 'Rudolph', '6', TRUE),
+    ('scarf', 'Comet', '22', FALSE),
+    ('slippers', 'Vixen', '54', TRUE),
+    ('nose warmer', 'Blitzen', '129', FALSE)
+    ;
 
 --
 \echo Query for gifts with a price greater than or equal to 20
