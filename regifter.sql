@@ -106,12 +106,13 @@ SELECT * FROM gifts WHERE id = 2;
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
+DELETE FROM gifts WHERE giver = 'Santa' RETURNING (value, gift);
 
 
 --
 \echo Query for all the columns in your gifts table one more time
 --
-
+SELECT * FROM gifts;
 
 
 -- BONUSES
@@ -119,11 +120,12 @@ SELECT * FROM gifts WHERE id = 2;
 --
  \echo Count the total number of gifts that have the word candle in it
 -- 
-
+SELECT COUNT (gift) FROM gifts;
 
 --
 \echo Get the AVEREAGE value from all the gifts
 --
+SELECT AVG (value) FROM gifts;
 
 
 -- 
