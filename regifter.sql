@@ -15,7 +15,7 @@ CREATE DATABASE regifter;
 -- giver - string
 -- value - integer
 -- previously_regifted boolean
-
+TBD
 
 -- 
 \echo See details of the table you created
