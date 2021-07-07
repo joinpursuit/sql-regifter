@@ -31,9 +31,9 @@ CREATE TABLE gifts
 -- \d gifts
 
 -- 
--- Alter the table so that the column price is changed to value
+-- Alter the table so that the column value is changed to value
 -- 
--- ALTER TABLE gifts RENAME value TO price;
+-- ALTER TABLE gifts RENAME value TO value;
 
 
 -- 
@@ -41,7 +41,7 @@ CREATE TABLE gifts
 -- 
 INSERT INTO 
 gifts
-    (gift, giver, price, previously_regifted)
+    (gift, giver, value, previously_regifted)
 VALUES
     ('peach candle', 'Santa', 9, true);
 
@@ -56,7 +56,7 @@ FROM gifts;
 -- 
 
 INSERT INTO gifts
-    (gift, giver, price, previously_regifted)
+    (gift, giver, value, previously_regifted)
 VALUES
     ('peach candle', 'Santa', '9', TRUE),
     ('cinnamon candle', 'Nick', '19', TRUE),
@@ -69,7 +69,7 @@ VALUES
 -- Insert 5 more gifts of your own choosing,  include 1 more candle
 --
 INSERT INTO gifts
-    (gift, giver, price, previously_regifted)
+    (gift, giver, value, previously_regifted)
 VALUES
     ('Shoes', 'Marsha', '59', FALSE),
     ('Hair Dye', 'Carina', '19', FALSE),
@@ -86,7 +86,7 @@ SELECT
     *
 FROM gifts
 WHERE
-price >= 20;
+value >= 20;
 
 --
 -- Query for every gift that has the word candle in it, only show the gift column
@@ -110,7 +110,7 @@ LIKE '%candle';
 SELECT
     *
 FROM gifts
-WHERE giver = 'Santa' OR price > 30;
+WHERE giver = 'Santa' OR value > 30;
 
 --
 -- Query for every gift whose giver is NOT Santa
@@ -124,16 +124,16 @@ WHERE giver != 'Santa';
 -- Update the second gift to have a value of 2999
 -- 
 UPDATE gifts
-SET price = 2999
+SET value = 2999
 WHERE id = 2;
 
 --
 -- Query for the updated item
 --
--- SELECT
---     *
--- FROM gifts
--- WHERE
+SELECT
+    *
+FROM gifts
+WHERE id = 2;
 
 --
 -- Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
@@ -142,7 +142,7 @@ WHERE id = 2;
 DELETE
 FROM
     gifts 
-WHERE giver ='Santa';
+WHERE giver = 'Santa';
 
 --
 -- Query for all the columns in your gifts table one more time
@@ -160,23 +160,23 @@ FROM gifts;
 SELECT COUNT(gift)
 FROM gifts
 WHERE gift
-LIKE '%candle%';
+iLIKE '%candle%';
 
 --
 -- Get the AVEREAGE value from all the gifts
 --
-SELECT AVG(price)
+SELECT AVG(value)
 FROM gifts;
 
 -- 
--- Limit to 3 gifts, offset by 2 and order by price descending
+-- Limit to 3 gifts, offset by 2 and order by value descending
 --
 -- NOT WORKING  after OFFSET...
-SELECT TOP 3
+SELECT
     *
 FROM gifts
---  OFFSET 2 
-ORDER BY price DESC;
+ORDER BY value DESC
+OFFSET 2;
 
 --
 -- finish
