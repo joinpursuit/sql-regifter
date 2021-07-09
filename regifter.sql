@@ -119,7 +119,6 @@ SELECT COUNT (*) FROM gifts WHERE gift ILIKE '%candle%';
 \echo Get the AVEREAGE value from all the gifts
 --
 
-SELECT AVG (*) FROM gifts 
 
 -- 
  \echo Limit to 3 gifts, offset by 2 and order by price descending
