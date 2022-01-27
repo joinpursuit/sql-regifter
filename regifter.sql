@@ -30,7 +30,7 @@ ALTER TABLE Gifts RENAME price TO value;
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
-INSERT INTO Gifts (gift, giver, value, previously_regifted) VALUES ('peach candle', 'Santa', 9, TRUE);
+INSERT INTO Gifts (gift, giver, value, previosly_regifted) VALUES ('peach candle', 'Santa', 9, TRUE);
 
 --
 \echo Query for all the columns in your gifts table
@@ -41,7 +41,7 @@ SELECT * FROM Gifts;
 \echo Uncomment below to insert 5 more gifts
 -- 
 
-INSERT INTO gifts (gift, giver, value, previously_regifted)
+INSERT INTO Gifts (gift, giver, value, previosly_regifted)
 VALUES
 ('peach candle', 'Santa', '9', TRUE),
 ('cinnamon candle', 'Nick', '19', TRUE),
@@ -53,7 +53,7 @@ VALUES
 -- 
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
-INSERT INTO gifts (gift, giver, value, previously_regifted)
+INSERT INTO Gifts (gift, giver, value, previosly_regifted)
 VALUES
 ('mango candle', 'Alfred', '85', TRUE),
 ('kiwi candle', 'James', '25', FALSE),
@@ -70,7 +70,7 @@ SELECT * FROM Gifts WHERE value >= 20;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
-SELECT gifts FROM Gifts WHERE gifts LIKE '%candle%';
+SELECT gift FROM Gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
