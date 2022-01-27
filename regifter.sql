@@ -104,7 +104,7 @@ SELECT * FROM gifts WHERE giver != '%Santa%';
 --
 \echo Update the second gift to have a value of 2999
 -- 
-
+UPDATE gifts SET value=2999 WHERE id=2;
 
 --
 \echo Query for the updated item
