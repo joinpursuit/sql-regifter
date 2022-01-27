@@ -114,7 +114,7 @@ SELECT * FROM gifts WHERE id = 2;
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
-
+DELETE FROM gifts WHERE id=1;
 
 --
 \echo Query for all the columns in your gifts table one more time
