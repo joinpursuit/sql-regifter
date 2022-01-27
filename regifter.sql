@@ -15,6 +15,12 @@ CREATE DATABASE regifter;
 -- giver - string
 -- value - integer
 -- previously_regifted boolean
+CREATE TABLE gifts(
+    id SERIAL PRIMARY KEY, 
+    gift TEXT, 
+    giver TEXT, 
+    value INT, perviously_regifted boolean
+);
 
 
 -- 
