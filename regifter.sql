@@ -15,32 +15,41 @@ CREATE DATABASE regifter;
 -- giver - string
 -- value - integer
 -- previously_regifted boolean
-
+CREATE TABLE gifts (id SERIAL, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN);
 
 -- 
 \echo See details of the table you created
 -- 
-
-
--- 
-\echo Alter the table so that the column price is changed to value 
--- 
-
+\d gifts
 
 -- 
-\echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
+\echo Alter the table so that the column value is changed to price 
 -- 
+ALTER TABLE gifts RENAME value TO price
 
+-- 
+\echo Insert a peach candle, given by 'Santa' thats price is 9 and has been previously regifted
+-- 
+INSERT INTO 
+    gifts (gift, giver, price, previously_regifted
+VALUES 
+("peach candle", "Santa", 9, true)
 
 --
 \echo Query for all the columns in your gifts table
 -- 
-
+SELECT * FROM gifts
 
 --
 \echo Uncomment below to insert 5 more gifts
 -- 
-
+INSERT INTO gifts (gift, giver, value, previously_regifted)
+VALUES
+('cinnamon candle', 'Nick', '19', TRUE),
+('soap on a rope', 'Rudolf', '29', FALSE),
+('potpurri', 'Elf on the Shelf', '39', TRUE),
+('mango candle', 'The Boss', '49', FALSE)
+;
 -- INSERT INTO gifts (gift, giver, value, previously_regifted)
 -- VALUES
 -- ('peach candle', 'Santa', '9', TRUE),
@@ -100,7 +109,7 @@ CREATE DATABASE regifter;
 -- BONUSES
 
 --
- \echo Count the total number of gifts that have the word candle in it
+\echo Count the total number of gifts that have the word candle in it
 -- 
 
 
@@ -110,7 +119,7 @@ CREATE DATABASE regifter;
 
 
 -- 
- \echo Limit to 3 gifts, offset by 2 and order by price descending
+\echo Limit to 3 gifts, offset by 2 and order by price descending
 --
 
 --
