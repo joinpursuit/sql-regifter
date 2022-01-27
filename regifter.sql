@@ -19,19 +19,21 @@ CREATE TABLE gifts(
     id SERIAL PRIMARY KEY, 
     gift TEXT, 
     giver TEXT, 
-    value INT, perviously_regifted boolean
+    price INT, perviously_regifted boolean
 );
 
 
 -- 
 \echo See details of the table you created
 -- 
-
+\dt
 
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
+ALTER TABLE gifts(
 
+)
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
