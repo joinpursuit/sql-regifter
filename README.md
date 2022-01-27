@@ -50,3 +50,6 @@ SELECT * FROM gifts;
 ![](./assets/example-query.png)
 
 Remember to press `\q` to quit out of `psql`
+
+\i regifter.sql
+
