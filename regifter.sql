@@ -107,8 +107,8 @@ SELECT * FROM gifts;
 --
 \echo Count the total number of gifts that have the word candle in it
 -- 
-SELECT COUNT(gifts) FROM gifts WHERE gift LIKE '%candle%';
--- SELECT SUM(gift) FROM gifts WHERE gift LIKE 'candle';
+-- SELECT COUNT(gifts) FROM gifts WHERE gift LIKE '%candle%';
+SELECT SUM(gift) FROM gifts WHERE gift LIKE 'candle';
 
 --
 \echo Get the AVEREAGE price from all the gifts
@@ -118,7 +118,7 @@ SELECT AVG(price) FROM gifts;
 -- 
 \echo Limit to 3 gifts, offset by 2 and order by price descending
 --
-SELECT * FROM gifts LIMIT 3 OFFSET 2 ORDER BY price DESC;
+SELECT * FROM gifts ORDER BY price DESC LIMIT 3 OFFSET 2;
 --
 -- finish
 --
