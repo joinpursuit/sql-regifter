@@ -107,8 +107,8 @@ SELECT * FROM gifts;
 --
 \echo Count the total number of gifts that have the word candle in it
 -- 
--- SELECT COUNT(gifts) FROM gifts WHERE gift LIKE '%candle%';
-SELECT SUM(gift) FROM gifts WHERE gift LIKE 'candle';
+SELECT COUNT(gifts) FROM gifts WHERE gift LIKE '%candle%';
+-- SELECT SUM(gift) FROM gifts WHERE gift LIKE 'candle';
 
 --
 \echo Get the AVEREAGE price from all the gifts
