@@ -30,10 +30,7 @@ ALTER TABLE gifts RENAME value TO price;
 -- 
 \echo Insert a peach candle, given by 'Santa' thats price is 9 and has been previously regifted
 -- 
-INSERT INTO 
-    gifts (gift, giver, price, previously_regifted
-VALUES 
-("peach candle", "Santa", 9, true);
+INSERT INTO gifts (gift, giver, price, previously_regifted) VALUES ("peach candle", "Santa", 9, true);
 
 --
 \echo Query for all the columns in your gifts table
@@ -43,12 +40,7 @@ SELECT * FROM gifts;
 --
 \echo Uncomment below to insert 5 more gifts
 -- 
-INSERT INTO gifts (gift, giver, value, previously_regifted)
-VALUES
-('cinnamon candle', 'Nick', '19', TRUE),
-('soap on a rope', 'Rudolf', '29', FALSE),
-('potpurri', 'Elf on the Shelf', '39', TRUE),
-('mango candle', 'The Boss', '49', FALSE)
+INSERT INTO gifts (gift, giver, value, previously_regifted) VALUES ('cinnamon candle', 'Nick', '19', TRUE), ('soap on a rope', 'Rudolf', '29', FALSE), ('potpurri', 'Elf on the Shelf', '39', TRUE), ('mango candle', 'The Boss', '49', FALSE)
 ;
 -- INSERT INTO gifts (gift, giver, value, previously_regifted)
 -- VALUES
@@ -62,13 +54,8 @@ VALUES
 -- 
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
-INSERT INTO gifts (gift, giver, value, previously_regifted)
-VALUES
-('100 dollars', 'Rich Aunt', '100', FALSE),
-('lavender candle', 'SANTA', '25', TRUE),
-('wireless headphones', 'Rich Aunt', '120', FALSE),
-('sneakers', 'Rich Aunt', '130', FALSE),
-('sweatpants', 'Rich Aunt', '50', FALSE)
+INSERT INTO gifts (gift, giver, value, previously_regifted) VALUES ('100 dollars', 'Rich Aunt', '100', FALSE), ('lavender candle', 'SANTA', '25', TRUE),
+('wireless headphones', 'Rich Aunt', '120', FALSE), ('sneakers', 'Rich Aunt', '130', FALSE), ('sweatpants', 'Rich Aunt', '50', FALSE)
 ;
 
 
