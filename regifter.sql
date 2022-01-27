@@ -84,7 +84,7 @@ SELECT * FROM gifts WHERE giver != 'Santa';
 --
 \echo Update the second gift to have a price of 2999
 -- 
-UPDATE gifts SET price = 2999 WHERE id = 2 RETURNING;
+UPDATE gifts SET price = 2999 WHERE id = 2 RETURNING *;
 
 --
 \echo Query for the updated item
