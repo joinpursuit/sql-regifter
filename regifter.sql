@@ -32,7 +32,7 @@ ALTER TABLE gifts RENAME value TO price;
 -- 
 INSERT INTO 
     gifts (gift, giver, price, previously_regifted)
-VALUES ("peach candle", "Santa", 9, true);
+VALUES ('peach candle', 'Santa', 9, true);
 
 --
 \echo Query for all the columns in your gifts table
@@ -69,17 +69,17 @@ SELECT * FROM gifts WHERE price >= 20;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
-SELECT gift FROM gifts WHERE gift LIKE "%candle%";
+SELECT gift FROM gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR price is greater than 30
 --
-SELECT * FROM gifts WHERE giver = "Santa" OR price > 30;
+SELECT * FROM gifts WHERE giver = 'Santa' OR price > 30;
 
 --
 \echo Query for every gift whose giver is NOT Santa
 --
-SELECT * FROM gifts WHERE giver != "Santa";
+SELECT * FROM gifts WHERE giver != 'Santa';
 
 --
 \echo Update the second gift to have a price of 2999
@@ -94,7 +94,7 @@ SELECT * FROM gifts WHERE id = 2;
 --
 \echo Delete all the gifts from Santa and return the 'price' and 'gift' of the gift you have deleted
 --
-DELETE FROM gifts WHERE giver = "Santa" RETURNING price, gift;
+DELETE FROM gifts WHERE giver = 'Santa' RETURNING price, gift;
 
 --
 \echo Query for all the columns in your gifts table one more time
@@ -107,8 +107,8 @@ SELECT * FROM gifts;
 --
 \echo Count the total number of gifts that have the word candle in it
 -- 
-SELECT COUNT(gifts) FROM gifts WHERE gift LIKE "%candle%";
--- SELECT SUM(gift) FROM gifts WHERE gift LIKE "candle";
+SELECT COUNT(gifts) FROM gifts WHERE gift LIKE '%candle%';
+-- SELECT SUM(gift) FROM gifts WHERE gift LIKE 'candle';
 
 --
 \echo Get the AVEREAGE price from all the gifts
