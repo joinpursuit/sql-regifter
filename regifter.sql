@@ -9,6 +9,9 @@ CREATE DATABASE regifter;
 
 --
 \echo Create a table called gifts
+CREATE TABLE 
+    gifts 
+    (id SERIAL PRIMARY KEY, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN );
 -- with the following columns
 -- id serial primary KEY
 -- gift - string
@@ -20,7 +23,7 @@ CREATE DATABASE regifter;
 -- 
 \echo See details of the table you created
 -- 
-
+\d gifts;
 
 -- 
 \echo Alter the table so that the column price is changed to value 
