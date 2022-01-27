@@ -89,7 +89,7 @@ SELECT * FROM gifts WHERE value >= 20;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
-
+SELECT gift FROM gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
