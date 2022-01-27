@@ -84,7 +84,7 @@ VALUES
 --
 \echo Query for gifts with a price greater than or equal to 20
 --
-
+SELECT * FROM gifts WHERE value >= 20;
 
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
