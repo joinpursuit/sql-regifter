@@ -20,7 +20,7 @@ CREATE TABLE gifts (id SERIAL, gift TEXT, giver TEXT, value INT, previously_regi
 -- 
 \echo See details of the table you created
 -- 
-
+\d gifts
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
@@ -29,7 +29,7 @@ ALTER TABLE gifts RENAME value TO price;
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
 
-INSERT INTO gifts (gift, giver, price, previously_regifted) VALUES ("peach candle", "Santa", 9, TRUE);
+INSERT INTO gifts (gift, giver, price, previously_regifted) VALUES ('peach candle', 'Santa', 9, TRUE);
 
 --
 \echo Query for all the columns in your gifts table
@@ -57,10 +57,10 @@ VALUES
 
 INSERT INTO gifts(gift, giver, price, previously_regifted) 
 VALUES 
-("ugly sweater", "Elf", 12, FALSE),
-("Linen candle", "Mrs. Claus", 17, TRUE), ("old book", "Dylan", 25, TRUE), 
-("hat", "deer", 0, TRUE),
-("socks", "Mrs. Claus", 15, FLASE)
+('ugly sweater', 'Elf', 12, FALSE),
+('Linen candle', 'Mrs. Claus', 17, TRUE), ('old book', 'Dylan', 10, TRUE), 
+('hat', 'deer', 0, TRUE),
+('socks', 'Mrs. Claus', 15, FALSE);
 
 --
 \echo Query for gifts with a price greater than or equal to 20
@@ -70,22 +70,19 @@ SELECT * FROM gifts WHERE price >= 20;
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
 
-SELECT gift FROM gifts WHERE gift LIKE "%candle";
+SELECT gift FROM gifts WHERE gift LIKE '%candle';
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
 --
-SELECT * FROM gifts WHERE giver = "%Santa" OR price > 30;
+SELECT * FROM gifts WHERE giver = 'Santa' OR price > 30;
 --
 \echo Query for every gift whose giver is NOT Santa
 --
-
-SELECT * FROM gifts WHERE giver != "%Santa";
+SELECT * FROM gifts WHERE giver != 'Santa';
 --
 \echo Update the second gift to have a value of 2999
 -- 
-
 UPDATE gifts SET price = 2999 WHERE id = 2;
-
 --
 \echo Query for the updated item
 --
@@ -96,7 +93,7 @@ SELECT * FROM gifts WHERE id = 2;
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
 
-DELETE FROM gifts WHERE giver ="Santa" RETURNING price, gift;
+DELETE FROM gifts WHERE giver = 'Santa' RETURNING price, gift;
 --
 \echo Query for all the columns in your gifts table one more time
 --
@@ -108,7 +105,7 @@ SELECT * FROM gifts;
 --
  \echo Count the total number of gifts that have the word candle in it
 -- 
-SELECT COUNT(gift) FROM gifts WHERE gift LIKE "%candle";
+SELECT COUNT(gift) FROM gifts WHERE gift LIKE '%candle';
 --
 \echo Get the AVEREAGE value from all the gifts
 --
