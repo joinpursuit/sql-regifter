@@ -37,12 +37,23 @@ RENAME price TO value;
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
-
+INSERT INTO gifts(
+    gift, 
+    giver, 
+    value, 
+    previously_regifted 
+)
+VALUES(
+    'a peach candle',
+    'Santa',
+    9,
+    TRUE
+);
 
 --
 \echo Query for all the columns in your gifts table
 -- 
-
+SELECT * FROM gifts;
 
 --
 \echo Uncomment below to insert 5 more gifts
