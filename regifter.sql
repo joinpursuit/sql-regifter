@@ -6,7 +6,6 @@ CREATE DATABASE regifter;
 
 --
 -- Write your code below each prompt
-
 --
 \echo Create a table called gifts
 -- with the following columns
@@ -15,40 +14,42 @@ CREATE DATABASE regifter;
 -- giver - string
 -- value - integer
 -- previously_regifted boolean
-
-
+CREATE TABLE gifts (id serial, gift TEXT, giver TEXT, value INT, previously_regifted BOOLEAN );
 -- 
 \echo See details of the table you created
 -- 
-
-
+\dt
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
 
+ALTER TABLE gifts intger 
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
+-- missing the 
+INSERT INTO gifts (gift , giver , value , previously_regifted)
+values ( peachcandle , Santa , 9 , true)
 
 
 --
 \echo Query for all the columns in your gifts table
 -- 
-
+/dt
 
 --
 \echo Uncomment below to insert 5 more gifts
 -- 
 
--- INSERT INTO gifts (gift, giver, value, previously_regifted)
--- VALUES
--- ('peach candle', 'Santa', '9', TRUE),
--- ('cinnamon candle', 'Nick', '19', TRUE),
--- ('soap on a rope', 'Rudolf', '29', FALSE),
--- ('potpurri', 'Elf on the Shelf', '39', TRUE),
--- ('mango candle', 'The Boss', '49', FALSE)
--- ;
+INSERT INTO gifts (gift, giver, value, previously_regifted)
+VALUES
+('peach candle', 'Santa', '9', TRUE),
+('cinnamon candle', 'Nick', '19', TRUE),
+('soap on a rope', 'Rudolf', '29', FALSE),
+('potpurri', 'Elf on the Shelf', '39', TRUE),
+('mango candle', 'The Boss', '49', FALSE)
+;
 
 -- 
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
