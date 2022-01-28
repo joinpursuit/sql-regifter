@@ -51,11 +51,11 @@ VALUES ('peach candle', 'Santa', '9', TRUE),
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
 INSERT INTO gifts (gift, giver, value, previously_regifted)
-VALUES ('rose water candle', 'valeria', 20, FALSE),
-('clear mind candles', 'santiago', 15, FALSE),
-('colorful mind candle', 'sebastian', 25, TRUE),
-('playful candle', 'valentina', 20, TRUE),
-('bright and glowing candle', 'carmen', 15, FALSE);
+VALUES ('peony envy candle', 'elizabeth', 20, FALSE),
+('essential oil diffuser', 'stacey', 15, FALSE),
+('fountain pen', 'richard', 25, TRUE),
+('freesia marigold book', 'christina', 20, TRUE),
+('makeup', 'tatiana', 15, FALSE);
 
 
 --
