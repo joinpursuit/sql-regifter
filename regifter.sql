@@ -106,7 +106,7 @@ UPDATE gifts SET value = 2999 WHERE id = 2;
 --
 \echo Query for the updated item
 --
-UPDATE gifts SET value = 2999 WHERE id = 2 RETURNING value;
+SELECT * FROM gifts WHERE id = 2;
 
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
