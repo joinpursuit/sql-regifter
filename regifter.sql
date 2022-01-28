@@ -42,33 +42,36 @@ SELECT * FROM gifts;
 --
 \echo Uncomment below to insert 5 more gifts
 -- 
-
--- 
-\echo Insert 5 more gifts of your own choosing,  include 1 more candle
---
 INSERT INTO gifts (gift, giver, value, previously_regifted) 
 VALUES ('peach candle', 'Santa', '9', TRUE),
 ('cinnamon candle', 'Nick', 19, TRUE),
 ('soap on a rope', 'Rudold', 29, FALSE),
 ('potpurri', 'Elf on the Shelf', 39, TRUE),
 ('mango candle', 'The Boss', 49, FALSE);
+-- 
+\echo Insert 5 more gifts of your own choosing,  include 1 more candle
+--
 
-
-
+INSERT INTO gifts (gift, giver, value, previously_regifted)
+VALUES ('rose water candle', 'valeria', 20, FALSE),
+('clear mind candles', 'santiago', 15, FALSE),
+('colorful mind candle', 'sebastian', 25, TRUE),
+('playful candle', 'valentina', 20, TRUE),
+('bright and glowing candle', 'carmen', 15, FALSE);
 --
 \echo Query for gifts with a price greater than or equal to 20
 --
-
-
+SELECT * FROM gifts WHERE value >= 20;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
 
+SELECT gift FROM gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
 --
-
+SELECT gift FROM gifts WHERE giver LIKE 'Santa' OR value > 30;
 
 --
 \echo Query for every gift whose giver is NOT Santa
