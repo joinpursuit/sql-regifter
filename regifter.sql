@@ -33,8 +33,7 @@ values ( 'peachcandle' , 'Santa', '9' , true)
 --
 \echo Query for all the columns in your gifts table
 -- 
-/dt
-
+SHOW COLUMNS FROM gifts;
 --
 \echo Uncomment below to insert 5 more gifts
 -- 
@@ -59,8 +58,6 @@ VALUES
 ('cake', 'Elf on the Shelf', '99', FALSE),
 ('mango candle', 'The Boss', '49', TRUE)
 ;
-
-
 --
 \echo Query for gifts with a price greater than or equal to 20
 --
