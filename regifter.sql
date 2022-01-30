@@ -20,18 +20,15 @@ CREATE TABLE gifts (id serial, gift TEXT, giver TEXT, value INT, previously_regi
 -- 
 \dt
 -- 
-\echo Alter the table so that the column price is changed to value 
+\echo Alter the table so that the column value  is changed to price
 -- 
-
-ALTER TABLE gifts intger 
-
+ALTER TABLE gifts RENAME value TO price;
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
 -- missing the 
-INSERT INTO gifts (gift , giver , value , previously_regifted)
-values ( peachcandle , Santa , 9 , true)
-
+INSERT INTO gifts (gift , giver , price , previously_regifted)
+values ( 'peachcandle' , 'Santa', '9' , true)
 
 --
 \echo Query for all the columns in your gifts table
@@ -42,7 +39,7 @@ values ( peachcandle , Santa , 9 , true)
 \echo Uncomment below to insert 5 more gifts
 -- 
 
-INSERT INTO gifts (gift, giver, value, previously_regifted)
+INSERT INTO gifts (gift, giver, price, previously_regifted)
 VALUES
 ('peach candle', 'Santa', '9', TRUE),
 ('cinnamon candle', 'Nick', '19', TRUE),
@@ -54,49 +51,54 @@ VALUES
 -- 
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
-
+INSERT INTO gifts (gift, giver, price, previously_regifted)
+VALUES
+('money candle', 'Santa', '1000', FALSE),
+('shoes' , 'Nick' , '80' , FALSE),
+('Rope', 'Rudolf', '30', FALSE),
+('cake', 'Elf on the Shelf', '99', FALSE),
+('mango candle', 'The Boss', '49', TRUE)
+;
 
 
 --
 \echo Query for gifts with a price greater than or equal to 20
 --
-
-
+SELECT * FROM gifts WHERE value  >= 165;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
-
+SELECT * FROM gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
 --
-
+SELECT * FROM gifts WHERE giver = 'Sants' OR value > 30 ;
 
 --
 \echo Query for every gift whose giver is NOT Santa
 --
-
-
+ SELECT * FROM gifts WHERE giver != 'Santa';
 --
-\echo Update the second gift to have a value of 2999
+\echo Update the second gift to have a value of 2999 
 -- 
-
+UPDATE gifts price = 2999 WHERE name = 'peach candle';
 
 --
 \echo Query for the updated item
 --
-
+SELECT * FROM gifts WHERE name = 'peach candle';
 
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
 
+DELETE FROM gifts WHERE gift = 'Santa' RETURNING * ;
 
 --
 \echo Query for all the columns in your gifts table one more time
 --
-
-
+/dt
 
 -- BONUSES
 
