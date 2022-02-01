@@ -25,21 +25,29 @@ CREATE TABLE gifts ( id serial primary KEY, gift TEXT, giver TEXT, value INT, pr
 \echo See details of the table you created
 -- 
 
-\ dt 
+\ dt gifts
 
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
+
+ALTER TABLE gifts RENAME value to price;
 
 
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
 
+INSERT INTO
+gifts ( gift, giver, price, previously_regifted)
+VALUES 
+('peach candle', 'Santa', 9, TRUE);
 
 --
 \echo Query for all the columns in your gifts table
 -- 
+
+SELECT * FROM gifts;
 
 
 --
