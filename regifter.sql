@@ -54,7 +54,7 @@ SELECT * FROM gifts;
 \echo Uncomment below to insert 5 more gifts
 -- 
 
- INSERT INTO gifts (gift, giver, value, previously_regifted)
+ INSERT INTO gifts (gift, giver, price, previously_regifted)
 VALUES
 ('peach candle', 'Santa', '9', TRUE),
 ('cinnamon candle', 'Nick', '19', TRUE),
