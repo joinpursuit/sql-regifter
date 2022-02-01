@@ -86,27 +86,37 @@ SELECT * FROM gifts WHERE price > 20;
 --
 \echo Query for every gift that has the word candle in it, only show the gift column
 --
+--- use %
 
+SELECT * FROM gifts WHERE gift LIKE '%candle%';
 
 --
 \echo Query for every gift whose giver is Santa OR value is greater than 30
 --
 
+--- Do NOT use double quotes!
+
+SELECT * FROM gifts WHERE giver = 'Santa' OR price > 30;
 
 --
 \echo Query for every gift whose giver is NOT Santa
 --
 
+-- Watch your bang "!="  not "!=="
+
+SELECT * FROM gifts WHERE giver !== 'Santa';
 
 --
 \echo Update the second gift to have a value of 2999
 -- 
 
+UPDATE gifts SET price = 2999 WHERE id = 2;
 
 --
 \echo Query for the updated item
 --
 
+SELECT * FROM gifts WHERE id = 2;
 
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
