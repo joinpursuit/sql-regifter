@@ -25,6 +25,7 @@ CREATE TABLE gifts ( id serial primary KEY, gift TEXT, giver TEXT, value INT, pr
 \echo See details of the table you created
 -- 
 
+\ dt 
 
 -- 
 \echo Alter the table so that the column price is changed to value 
