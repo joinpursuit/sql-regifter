@@ -67,6 +67,14 @@ VALUES
 \echo Insert 5 more gifts of your own choosing,  include 1 more candle
 --
 
+INSERT INTO gifts (gift, giver, price, previously_regifted)
+VALUES
+('lavender candle', 'Mom', '2', TRUE),
+('Brooks Brothers Sweater', 'Friend', '190', TRUE),
+('Porsche 911', 'Myself', '900000', FALSE),
+('New gloves', 'Theodore', '39', TRUE),
+('iPhone 13', 'Unknown', '1000', FALSE)
+;
 
 
 --
