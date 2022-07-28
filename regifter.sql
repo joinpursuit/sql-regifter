@@ -22,25 +22,23 @@ CREATE TABLE
 -- 
 \echo See details of the table you created
 -- 
-\d gifts;
+\d+ gifts;
 
 -- 
 \echo Alter the table so that the column price is changed to value 
 -- 
  ALTER TABLE gifts RENAME price TO value;
-\d+ gifts
+
 -- 
 \echo Insert a peach candle, given by 'Santa' thats value is 9 and has been previously regifted
 -- 
 
-INSERT INTO gifts (gift, giver, value, previously_regifted)VALUES('peach candle', 'Santa', '9', TRUE);
+INSERT INTO gifts (gift, giver, value, previously_regifted)
+VALUES('peach candle', 'Santa', '9', TRUE);
 --
 \echo Query for all the columns in your gifts table
 -- 
- SELECT gift FROM gifts;
-SELECT giver FROM gifts;
-SELECT value FROM gifts;
-SELECT previously_regifted FROM gifts;
+
 SELECT * from gifts
 --
 \echo Uncomment below to insert 5 more gifts
@@ -83,7 +81,7 @@ SELECT * FROM gifts WHERE giver='Santa' OR  value >30;
 \echo Query for every gift whose giver is NOT Santa
 --
 
-SELECT * FROM gifts WHERE NOT giver!='Santa' OR  value >30;
+SELECT * FROM gifts WHERE NOT giver!='Santa' 
 --
 \echo Update the second gift to have a value of 2999
 -- 
@@ -111,7 +109,7 @@ SELECT * FROM gifts;
  \echo Count the total number of gifts that have the word candle in it
 -- 
 
-SELECT COUNT(*) FROM gifts WHERE gift LIKE '%candle%';
+SELECT COUNT(gift) FROM gifts WHERE gift LIKE '%candle%';
 --
 \echo Get the AVEREAGE value from all the gifts
 --
