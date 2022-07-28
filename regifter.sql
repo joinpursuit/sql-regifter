@@ -1,20 +1,9 @@
--- Getting started, do not update
 DROP DATABASE IF EXISTS regifter;
 CREATE DATABASE regifter;
 \c regifter
--- End getting started code
 
---
--- Write your code below each prompt
-
---
 \echo Create a table called gifts
--- with the following columns
--- id serial primary KEY
--- gift - string
--- giver - string
--- value - integer
--- previously_regifted boolean
+
 CREATE TABLE gifts(
     id SERIAL PRIMARY KEY,
     gift TEXT,
@@ -130,9 +119,6 @@ DELETE FROM gifts WHERE id = 1;
 
 SELECT * FROM gifts;
 
-
--- BONUSES
-
 --
  \echo Count the total number of gifts that have the word candle in it
 -- 
@@ -151,6 +137,7 @@ SELECT AVG(value) FROM gifts;
 
 SELECT * FROM gifts LIMIT 3 OFFSET 2;
 --
--- finish
+
 --
 DROP TABLE IF EXISTS gifts;
+--
