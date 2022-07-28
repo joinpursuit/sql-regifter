@@ -113,7 +113,7 @@ SELECT * FROM gifts WHERE id = 2;
 --
 \echo Delete all the gifts from Santa and return the 'value' and 'gift' of the gift you have deleted
 --
-DELETE FROM gifts WHERE giver = 'Santa';
+DELETE FROM gifts WHERE giver = 'Santa' RETURNING value, gift;
 
 
 --
